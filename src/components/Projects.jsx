@@ -59,7 +59,8 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-accent-50 px-2 py-0.5 text-xs font-medium text-accent-700 dark:bg-accent-950/50 dark:text-accent-300"
+                      className="rounded-md bg-white/40 px-2 py-0.5 text-xs font-medium text-slate-800 backdrop-blur-sm dark:bg-black/30 dark:text-slate-200 dark:border dark:border-white/10"
+
                     >
                       {tech}
                     </span>
