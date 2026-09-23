@@ -60,7 +60,6 @@ export default function Projects() {
                     <span
                       key={tech}
                       className="rounded-md bg-white/40 px-2 py-0.5 text-xs font-medium text-slate-800 backdrop-blur-sm dark:bg-black/30 dark:text-slate-200 dark:border dark:border-white/10"
-
                     >
                       {tech}
                     </span>
