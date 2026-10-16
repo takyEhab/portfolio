@@ -1,10 +1,29 @@
 export const projects = [
   {
     id: 1,
+    title: "Food Delivery & Fleet Dispatch System",
+    description:
+      "A specialized delivery and fleet management web application designed for a high-volume seafood restaurant. Solved order bottlenecks during rush hours by building an oceanic dark-mode dispatch console with 2-second customer phone lookup, live order stage tracking (Kitchen → Delivery → Completed), courier assignment, and audio chimes. Engineered a 100% responsive, bilingual interface (Arabic RTL & English LTR) with a standalone in-browser sandbox demo for instant client evaluation.",
+    image: "/prince-of-the-seas.png",
+    imageGradient: "from-cyan-600 to-blue-800",
+    tech: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "PostgreSQL",
+      "Bilingual (AR/EN)",
+      "UI/UX Design",
+    ],
+    github: "https://github.com/takyEhab/delivery-hub-platform",
+    live: "https://prince-of-the-seas-demo.vercel.app",
+    dates: "2026",
+  },
+  {
+    id: 2,
     title: "DevLink",
     description:
       "Developer networking platform with authentication, profile management, project sharing, and REST APIs. Features real-time messaging powered by Socket.io.",
-    image: null,
+    image: "/devlink.jpeg",
     imageGradient: "from-violet-500 to-purple-700",
     tech: [
       "React",
@@ -19,24 +38,23 @@ export const projects = [
     dates: "2025 — 2026",
   },
   {
-    id: 2,
-    title: "Delivery Hub Platform",
+    id: 3,
+    title: "Portfolio Website",
     description:
-      "A full-stack platform for managing restaurant and delivery operations — order intake, driver assignment, and real-time delivery status tracking.",
-    image: null,
-    imageGradient: "from-purple-400 to-green-300",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
-    github: "https://github.com/takyEhab/delivery-hub-platform",
-    live: "https://delivery-hub-platform.vercel.app",
+      "Personal developer portfolio built with React, Vite, and Tailwind CSS to showcase web development projects, technical skills, and experience.",
+    image: "/portfolio.png",
+    imageGradient: "from-cyan-500 to-blue-600",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/takyEhab/portfolio",
+    live: "https://portfolio-opal-eight-7ajufnpuuv.vercel.app",
     dates: "2026",
   },
-
   {
-    id: 3,
+    id: 4,
     title: "Waraqa",
     description:
       "Full-stack online learning platform built and deployed from development through production. Includes JWT authentication, responsive Vue.js interfaces, and production infrastructure on DigitalOcean.",
-    image: null,
+    image: "/waraqa.png",
     imageGradient: "from-indigo-500 to-blue-600",
     tech: ["Vue.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
     github: null,
@@ -44,11 +62,11 @@ export const projects = [
     dates: "2022",
   },
   {
-    id: 4,
+    id: 5,
     title: "Python Web Scrapers",
     description:
       "Custom Python web scrapers built for client data collection and monitoring use cases. Designed for reliability, scheduled runs, and structured data output.",
-    image: null,
+    image: "/python-scrapers.jpg",
     imageGradient: "from-emerald-500 to-teal-600",
     tech: ["Python", "Web Scraping", "Automation", "Data Collection"],
     github: null,
@@ -56,11 +74,11 @@ export const projects = [
     dates: "2020 — 2022",
   },
   {
-    id: 5,
+    id: 6,
     title: "Chrome Extensions",
     description:
       "JavaScript Chrome extensions developed to automate and streamline browser-based workflows for freelance clients, reducing manual repetitive tasks.",
-    image: null,
+    image: "/chrome-extensions.jpg",
     imageGradient: "from-orange-500 to-amber-600",
     tech: ["JavaScript", "Chrome APIs", "Automation"],
     github: null,

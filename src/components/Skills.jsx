@@ -41,6 +41,7 @@ const iconMap = {
   git: GitBranch,
   docker: Box,
   aws: Cloud,
+  cloud: Cloud,
   cicd: RefreshCw,
   vite: Zap,
   figma: PenTool,

@@ -4,8 +4,8 @@ export const skillCategories = [
     title: 'Frontend',
     skills: [
       { name: 'React.js', icon: 'react' },
-      { name: 'Vue.js', icon: 'react' },
       { name: 'React Native', icon: 'react' },
+      { name: 'Vue.js', icon: 'react' },
       { name: 'Redux', icon: 'redux' },
       { name: 'Tailwind CSS', icon: 'tailwind' },
       { name: 'Bootstrap', icon: 'css' },
@@ -21,6 +21,8 @@ export const skillCategories = [
       { name: 'REST APIs', icon: 'api' },
       { name: 'JWT Auth', icon: 'auth' },
       { name: 'Socket.io', icon: 'api' },
+      { name: 'Joi Validation', icon: 'auth' },
+      { name: 'RBAC', icon: 'auth' },
     ],
   },
   {
@@ -28,8 +30,8 @@ export const skillCategories = [
     title: 'Database',
     skills: [
       { name: 'MongoDB', icon: 'mongodb' },
-      { name: 'MySQL', icon: 'postgresql' },
       { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'MySQL', icon: 'postgresql' },
       { name: 'SQL', icon: 'postgresql' },
     ],
   },
@@ -42,8 +44,10 @@ export const skillCategories = [
       { name: 'Apache', icon: 'docker' },
       { name: 'DigitalOcean', icon: 'cloud' },
       { name: 'Git/GitHub', icon: 'git' },
+      { name: 'CI/CD (Vercel)', icon: 'cicd' },
       { name: 'JavaScript', icon: 'javascript' },
       { name: 'Python', icon: 'javascript' },
+      { name: 'C', icon: 'javascript' },
     ],
   },
 ];

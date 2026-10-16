@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Briefcase } from 'lucide-react';
 import { personalInfo } from '../data/experience';
 
 export default function Footer() {
@@ -7,6 +7,7 @@ export default function Footer() {
   const socialLinks = [
     { href: personalInfo.github, icon: Github, label: 'GitHub' },
     { href: personalInfo.linkedin, icon: Linkedin, label: 'LinkedIn' },
+    ...(personalInfo.upwork ? [{ href: personalInfo.upwork, icon: Briefcase, label: 'Upwork' }] : []),
     { href: `mailto:${personalInfo.email}`, icon: Mail, label: 'Email' },
   ];
 

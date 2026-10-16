@@ -37,15 +37,27 @@ export default function Projects() {
               variants={cardVariants}
               className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
             >
-              {/* Image placeholder */}
-              <div
-                className={`relative flex h-44 items-center justify-center bg-gradient-to-br ${project.imageGradient}`}
-              >
-                <span className="font-heading text-2xl font-bold text-white/90">
-                  {project.title.split(' ')[0]}
-                </span>
-                <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
-              </div>
+              {/* Project Image or Gradient Placeholder */}
+              {project.image ? (
+                <div className="relative h-44 overflow-hidden bg-gray-100 dark:bg-gray-800">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
+                </div>
+              ) : (
+                <div
+                  className={`relative flex h-44 items-center justify-center bg-gradient-to-br ${project.imageGradient}`}
+                >
+                  <span className="font-heading text-2xl font-bold text-white/90">
+                    {project.title.split(' ')[0]}
+                  </span>
+                  <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
+                </div>
+              )}
 
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-heading text-lg font-semibold text-gray-900 dark:text-white">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, CheckCircle, AlertCircle, Briefcase } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { personalInfo } from '../data/experience';
 import { submitContactForm } from '../utils/submitContactForm';
@@ -71,6 +71,7 @@ export default function Contact() {
   const socialLinks = [
     { href: personalInfo.github, icon: Github, label: 'GitHub' },
     { href: personalInfo.linkedin, icon: Linkedin, label: 'LinkedIn' },
+    ...(personalInfo.upwork ? [{ href: personalInfo.upwork, icon: Briefcase, label: 'Upwork' }] : []),
     { href: `mailto:${personalInfo.email}`, icon: Mail, label: 'Email' },
   ];
 
