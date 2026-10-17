@@ -114,7 +114,7 @@ export default function Projects() {
                             href={demo.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-md bg-accent-50 px-2 py-1 text-xs font-medium text-accent-700 transition-colors hover:bg-accent-100 dark:bg-accent-950/50 dark:text-accent-300 dark:hover:bg-accent-900/50"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-accent-200/80 bg-accent-50/90 px-2.5 py-1.5 text-xs font-medium text-accent-700 shadow-sm transition-all hover:bg-accent-100 hover:text-accent-900 dark:border-accent-700/60 dark:bg-accent-950/70 dark:text-accent-300 dark:shadow-none dark:hover:border-accent-500 dark:hover:bg-accent-900/60 dark:hover:text-white"
                           >
                             <ExternalLink size={12} />
                             {demo.label}
