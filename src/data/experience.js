@@ -58,7 +58,7 @@ export const personalInfo = {
 export const aboutStats = [
   { label: 'Years Experience', value: '2+' },
   { label: 'Technologies', value: '20+' },
-  { label: 'Projects Deployed', value: '3+' },
+  { label: 'Projects Deployed', value: '5+' },
   { label: 'Certifications', value: '5' },
 ];
 
