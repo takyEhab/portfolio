@@ -1,78 +1,35 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Send, CheckCircle, AlertCircle, Briefcase } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Briefcase, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { personalInfo } from '../data/experience';
-import { submitContactForm } from '../utils/submitContactForm';
-
-const initialFormState = { name: '', email: '', message: '' };
-
-function validateForm({ name, email, message }) {
-  const errors = {};
-
-  if (!name.trim()) {
-    errors.name = 'Name is required';
-  } else if (name.trim().length < 2) {
-    errors.name = 'Name must be at least 2 characters';
-  }
-
-  if (!email.trim()) {
-    errors.email = 'Email is required';
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.email = 'Please enter a valid email address';
-  }
-
-  if (!message.trim()) {
-    errors.message = 'Message is required';
-  } else if (message.trim().length < 10) {
-    errors.message = 'Message must be at least 10 characters';
-  }
-
-  return errors;
-}
 
 export default function Contact() {
-  const [formData, setFormData] = useState(initialFormState);
-  const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
-  const [statusMessage, setStatusMessage] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const validationErrors = validateForm(formData);
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    setStatus('submitting');
-    setErrors({});
-
-    try {
-      const result = await submitContactForm(formData);
-      setStatus('success');
-      setStatusMessage(result.message);
-      setFormData(initialFormState);
-    } catch {
-      setStatus('error');
-      setStatusMessage('Something went wrong. Please try again later.');
-    }
-  };
-
   const socialLinks = [
-    { href: personalInfo.github, icon: Github, label: 'GitHub' },
-    { href: personalInfo.linkedin, icon: Linkedin, label: 'LinkedIn' },
-    ...(personalInfo.upwork ? [{ href: personalInfo.upwork, icon: Briefcase, label: 'Upwork' }] : []),
-    { href: `mailto:${personalInfo.email}`, icon: Mail, label: 'Email' },
+    {
+      name: 'GitHub',
+      handle: 'takyEhab',
+      href: personalInfo.github,
+      icon: Github,
+      desc: 'Check out my code repositories and contributions',
+    },
+    {
+      name: 'LinkedIn',
+      handle: 'taky-gad',
+      href: personalInfo.linkedin,
+      icon: Linkedin,
+      desc: 'Connect professionally and view my experience',
+    },
+    ...(personalInfo.upwork
+      ? [
+          {
+            name: 'Upwork',
+            handle: 'Taky G.',
+            href: personalInfo.upwork,
+            icon: Briefcase,
+            desc: 'Hire me for freelance full-stack development',
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -80,158 +37,84 @@ export default function Contact() {
       <div className="mx-auto max-w-4xl">
         <SectionHeading
           title="Get In Touch"
-          subtitle="Have a project in mind or want to say hello? I'd love to hear from you."
+          subtitle="Have a project in mind or want to discuss opportunities? I'd love to hear from you."
         />
 
-        <div className="grid gap-12 lg:grid-cols-5">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
-          >
-            <p className="text-gray-600 dark:text-gray-400">
-              I&apos;m currently open to freelance opportunities and full-time roles.
-              Whether you have a question or just want to connect, my inbox is always open.
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-12"
+        >
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-300 sm:text-lg">
+            I&apos;m currently open to freelance opportunities, contracts, and full-time software engineering roles.
+            Feel free to reach out directly — my inbox is always open.
+          </p>
 
-            <div className="mt-6 flex gap-4">
-              {socialLinks.map(({ href, icon: Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={label !== 'Email' ? '_blank' : undefined}
-                  rel={label !== 'Email' ? 'noopener noreferrer' : undefined}
-                  aria-label={label}
-                  className="rounded-lg border border-gray-200 p-3 text-gray-600 transition-all hover:border-accent-300 hover:bg-accent-50 hover:text-accent-600 dark:border-gray-700 dark:text-gray-400 dark:hover:border-accent-600 dark:hover:bg-accent-950/50 dark:hover:text-accent-400"
-                >
-                  <Icon size={22} />
-                </a>
-              ))}
-            </div>
+          {/* Primary Contact Action Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="inline-flex items-center gap-2 rounded-xl bg-accent-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-600/25 transition-all hover:-translate-y-0.5 hover:bg-accent-700 hover:shadow-accent-600/40"
+            >
+              <Mail size={18} />
+              <span>{personalInfo.email}</span>
+            </a>
 
-            <div className="mt-6 space-y-1 text-sm text-gray-500 dark:text-gray-400">
-              <p>
-                <Mail size={14} className="mr-1 inline" />
-                {personalInfo.email}
-              </p>
-              {personalInfo.phone && (
-                <p>{personalInfo.phone}</p>
-              )}
-            </div>
-          </motion.div>
-
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5 }}
-            onSubmit={handleSubmit}
-            noValidate
-            className="lg:col-span-3"
-          >
-            <div className="space-y-5">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-2.5 text-gray-900 outline-none transition-colors focus:ring-2 focus:ring-accent-500/20 dark:bg-gray-900 dark:text-white ${
-                    errors.name
-                      ? 'border-red-400 dark:border-red-500'
-                      : 'border-gray-300 dark:border-gray-700 focus:border-accent-500'
-                  }`}
-                  placeholder="Your name"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-2.5 text-gray-900 outline-none transition-colors focus:ring-2 focus:ring-accent-500/20 dark:bg-gray-900 dark:text-white ${
-                    errors.email
-                      ? 'border-red-400 dark:border-red-500'
-                      : 'border-gray-300 dark:border-gray-700 focus:border-accent-500'
-                  }`}
-                  placeholder="you@example.com"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className={`w-full resize-none rounded-lg border bg-white px-4 py-2.5 text-gray-900 outline-none transition-colors focus:ring-2 focus:ring-accent-500/20 dark:bg-gray-900 dark:text-white ${
-                    errors.message
-                      ? 'border-red-400 dark:border-red-500'
-                      : 'border-gray-300 dark:border-gray-700 focus:border-accent-500'
-                  }`}
-                  placeholder="Tell me about your project..."
-                />
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-500">{errors.message}</p>
-                )}
-              </div>
-
-              {status === 'success' && (
-                <div className="flex items-center gap-2 rounded-lg bg-green-50 p-3 text-sm text-green-700 dark:bg-green-950/50 dark:text-green-400">
-                  <CheckCircle size={18} />
-                  {statusMessage}
-                </div>
-              )}
-
-              {status === 'error' && (
-                <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-400">
-                  <AlertCircle size={18} />
-                  {statusMessage}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === 'submitting'}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent-600/25 transition-all hover:bg-accent-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            {personalInfo.phone && (
+              <a
+                href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-750"
               >
-                <Send size={18} />
-                {status === 'submitting' ? 'Sending...' : 'Send Message'}
-              </button>
+                <Phone size={18} className="text-accent-600 dark:text-accent-400" />
+                <span>{personalInfo.phone}</span>
+              </a>
+            )}
+          </div>
+
+          {/* Location Indicator */}
+          {personalInfo.location && (
+            <div className="mt-6 flex items-center justify-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+              <MapPin size={14} className="text-accent-500" />
+              <span>Based in {personalInfo.location} · Open to Remote & Relocation</span>
             </div>
-          </motion.form>
-        </div>
+          )}
+
+          {/* Social Profiles Grid */}
+          <div className="mt-10 grid gap-4 border-t border-gray-100 pt-8 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-3">
+            {socialLinks.map(({ name, handle, href, icon: Icon, desc }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-start rounded-xl border border-gray-200/80 bg-gray-50/60 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent-300 hover:bg-white hover:shadow-md dark:border-gray-800 dark:bg-gray-850 dark:hover:border-accent-600 dark:hover:bg-gray-800"
+              >
+                <div className="flex w-full items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm dark:bg-gray-800 dark:border dark:border-gray-700">
+                      <Icon size={18} className="text-accent-600 dark:text-accent-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                        {name}
+                      </h4>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">{handle}</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight
+                    size={16}
+                    className="text-gray-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-600 dark:group-hover:text-accent-400"
+                  />
+                </div>
+                <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {desc}
+                </p>
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
