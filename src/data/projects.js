@@ -87,7 +87,7 @@ export const projects = [
       "Socket.io",
     ],
     github: "https://github.com/takyEhab/DevLink",
-    live: "https://dev-link-frontend-mu.vercel.app",
+    live: "https://devlink-platform.vercel.app",
     dates: "2025 — 2026",
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     imageGradient: "from-cyan-500 to-blue-600",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/takyEhab/portfolio",
-    live: "https://portfolio-opal-eight-7ajufnpuuv.vercel.app",
+    live: "https://takygad.vercel.app",
     dates: "2026",
   },
   {
