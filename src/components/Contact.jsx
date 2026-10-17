@@ -65,7 +65,7 @@ export default function Contact() {
             {personalInfo.phone && (
               <a
                 href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-750"
+                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
               >
                 <Phone size={18} className="text-accent-600 dark:text-accent-400" />
                 <span>{personalInfo.phone}</span>
@@ -89,11 +89,11 @@ export default function Contact() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-start rounded-xl border border-gray-200/80 bg-gray-50/60 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent-300 hover:bg-white hover:shadow-md dark:border-gray-800 dark:bg-gray-850 dark:hover:border-accent-600 dark:hover:bg-gray-800"
+                className="group flex flex-col items-start rounded-xl border border-gray-200/80 bg-gray-50/60 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent-300 hover:bg-white hover:shadow-md dark:border-gray-800 dark:bg-gray-800/60 dark:hover:border-accent-500 dark:hover:bg-gray-800"
               >
                 <div className="flex w-full items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm dark:bg-gray-800 dark:border dark:border-gray-700">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm dark:border dark:border-gray-700/80 dark:bg-gray-900">
                       <Icon size={18} className="text-accent-600 dark:text-accent-400" />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ export default function Contact() {
                     className="text-gray-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-600 dark:group-hover:text-accent-400"
                   />
                 </div>
-                <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="mt-3 text-xs leading-relaxed text-gray-600 dark:text-gray-300">
                   {desc}
                 </p>
               </a>
