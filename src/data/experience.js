@@ -1,11 +1,11 @@
 export const experience = [
   {
     id: 1,
-    company: 'Food Delivery & Fleet Dispatch System',
+    company: 'Food Delivery & Fleet Dispatch Platform',
     role: 'Freelance Full-Stack Developer & UI/UX Designer',
     dates: '2026',
     description:
-      'Designed, built, and deployed a specialized delivery and fleet management web application for a high-volume seafood restaurant. Solved order bottlenecks during rush hours by building an oceanic dark-mode dispatch console with 2-second customer phone lookup, live order stage tracking (Kitchen → Delivery → Completed), courier assignment, and audio chimes. Engineered a 100% responsive, bilingual interface (Arabic RTL & English LTR) with a standalone in-browser sandbox demo for instant client evaluation.',
+      'Architected and deployed a multi-role delivery operations platform with a dual-frontend architecture: (1) Prince of the Seas — a bespoke oceanic dark-mode console with bilingual Arabic (RTL) / English (LTR) localization, fast phone lookup, stage tracking, and audio chimes; (2) DeliveryHub Pro — a universal clean light-mode B2B operations and dispatch console. Both feature 100% in-browser zero-backend sandbox demos.',
   },
   {
     id: 2,

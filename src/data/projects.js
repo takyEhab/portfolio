@@ -1,10 +1,11 @@
 export const projects = [
   {
     id: 1,
-    title: "Food Delivery & Fleet Dispatch System",
+    title: "Food Delivery & Fleet Dispatch Platform",
+    subtitle: "Dual-Frontend Showcase: Prince of the Seas & DeliveryHub Pro",
     description:
-      "A specialized delivery and fleet management web application designed for a high-volume seafood restaurant. Solved order bottlenecks during rush hours by building an oceanic dark-mode dispatch console with 2-second customer phone lookup, live order stage tracking (Kitchen → Delivery → Completed), courier assignment, and audio chimes. Engineered a 100% responsive, bilingual interface (Arabic RTL & English LTR) with a standalone in-browser sandbox demo for instant client evaluation.",
-    image: "/prince-of-the-seas.png",
+      "A full-stack delivery and courier dispatch platform built with a dual-frontend architecture: (1) Prince of the Seas (أمير البحار) — bespoke oceanic dark-mode console with bilingual Arabic (RTL) / English (LTR) localization, fast phone lookup, stage tracking, and audio chimes; (2) DeliveryHub Pro — universal clean light-mode B2B operations and dispatch console. Both run interactive zero-backend in-browser sandbox demos.",
+    image: "/delivery-hub-dual.png",
     imageGradient: "from-cyan-600 to-blue-800",
     tech: [
       "React",
@@ -15,6 +16,16 @@ export const projects = [
       "UI/UX Design",
     ],
     github: "https://github.com/takyEhab/delivery-hub-platform",
+    demos: [
+      {
+        label: "Prince of the Seas (AR/EN)",
+        url: "https://prince-of-the-seas-demo.vercel.app",
+      },
+      {
+        label: "DeliveryHub Pro (B2B)",
+        url: "https://delivery-hub-platform.vercel.app",
+      },
+    ],
     live: "https://prince-of-the-seas-demo.vercel.app",
     dates: "2026",
   },

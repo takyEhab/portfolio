@@ -63,6 +63,11 @@ export default function Projects() {
                 <h3 className="font-heading text-lg font-semibold text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
+                {project.subtitle && (
+                  <p className="mt-1 text-xs font-medium text-accent-600 dark:text-accent-400">
+                    {project.subtitle}
+                  </p>
+                )}
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                   {project.description}
                 </p>
@@ -78,8 +83,36 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {(project.github || project.live) && (
-                  <div className="mt-4 flex items-center gap-3 border-t border-gray-100 pt-4 dark:border-gray-800">
+                {(project.github || project.live || project.demos) && (
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-gray-100 pt-4 dark:border-gray-800">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {project.demos ? (
+                        project.demos.map((demo) => (
+                          <a
+                            key={demo.label}
+                            href={demo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-md bg-accent-50 px-2 py-1 text-xs font-medium text-accent-700 transition-colors hover:bg-accent-100 dark:bg-accent-950/50 dark:text-accent-300 dark:hover:bg-accent-900/50"
+                          >
+                            <ExternalLink size={12} />
+                            {demo.label}
+                          </a>
+                        ))
+                      ) : project.live ? (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} live demo`}
+                          className="inline-flex items-center gap-1.5 rounded-lg p-2 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-100 hover:text-accent-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-accent-400"
+                        >
+                          <ExternalLink size={18} />
+                          <span className="text-xs">Live Demo</span>
+                        </a>
+                      ) : null}
+                    </div>
+
                     {project.github && (
                       <a
                         href={project.github}
@@ -89,17 +122,6 @@ export default function Projects() {
                         className="rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
                       >
                         <Github size={20} />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} live demo`}
-                        className="rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-accent-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-accent-400"
-                      >
-                        <ExternalLink size={20} />
                       </a>
                     )}
                   </div>
