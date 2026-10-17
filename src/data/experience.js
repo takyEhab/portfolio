@@ -66,8 +66,8 @@ export const education = {
 
 export const certifications = [
   'ALX Software Engineering Certificate — ALX Africa (2025)',
-  'CS50: Introduction to Computer Science — Harvard University, via edX',
-  'CS50W: Web Programming with Python and JavaScript — Harvard University, via edX',
+  'CS50: Introduction to Computer Science (Coursework) — Harvard University, via edX',
+  'CS50W: Web Programming with Python and JavaScript (Coursework) — Harvard University, via edX',
   'IT Department Training Certificate — Alexandria Water Company (AWCO) (Aug 2026)',
   'ICDL Certificate',
 ];

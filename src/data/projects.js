@@ -1,10 +1,11 @@
 export const projects = [
   {
     id: 1,
+    featured: true,
     title: "Food Delivery & Fleet Dispatch Platform",
     subtitle: "Dual-Frontend Showcase: Prince of the Seas & DeliveryHub Pro",
     description:
-      "A full-stack delivery and courier dispatch platform built with a dual-frontend architecture: (1) Prince of the Seas (أمير البحار) — bespoke oceanic dark-mode console with bilingual Arabic (RTL) / English (LTR) localization, fast phone lookup, stage tracking, and audio chimes; (2) DeliveryHub Pro — universal clean light-mode B2B operations and dispatch console. Both run interactive zero-backend in-browser sandbox demos.",
+      "A production-ready delivery and courier dispatch platform engineered with a dual-frontend architecture: a customized oceanic retail console alongside a universal B2B logistics platform, both backed by instant zero-latency sandbox demos.",
     image: "/delivery-hub-dual.png",
     imageGradient: "from-cyan-600 to-blue-800",
     tech: [
@@ -28,6 +29,47 @@ export const projects = [
     ],
     live: "https://prince-of-the-seas-demo.vercel.app",
     dates: "2026",
+    dividedFeatures: [
+      {
+        title: "Prince of the Seas (أمير البحار)",
+        badge: "Oceanic Dark · AR/EN",
+        theme: "cyan",
+        url: "https://prince-of-the-seas-demo.vercel.app",
+        linkText: "Launch Retail Demo (AR/EN)",
+        points: [
+          { bold: "Bilingual Localization:", text: "Seamless Arabic (RTL) & English (LTR) layout switching." },
+          { bold: "2s Customer Lookup:", text: "Instant repeat customer autofill by phone number." },
+          { bold: "Store Pipeline:", text: "Visual order stages: Kitchen Prep, Packing, Dispatch, and Delivered." },
+          { bold: "Audio Notifications:", text: "Sound chimes for incoming orders and status updates." },
+        ],
+      },
+      {
+        title: "DeliveryHub Pro",
+        badge: "Universal B2B · Light",
+        theme: "blue",
+        url: "https://delivery-hub-platform.vercel.app",
+        linkText: "Launch B2B Demo (Light)",
+        points: [
+          { bold: "Fleet Operations:", text: "Courier assignment, live route tracking, and driver status transitions." },
+          { bold: "Dispatch Management:", text: "Real-time order pipeline and operations monitoring." },
+          { bold: "Customer Directory:", text: "Centralized customer profiles, addresses, and order histories." },
+          { bold: "Clean Enterprise UI:", text: "Accessible high-density data tables and status filters." },
+        ],
+      },
+      {
+        title: "In-Browser Sandbox Mode",
+        badge: "Zero-Backend",
+        theme: "emerald",
+        url: "https://github.com/takyEhab/delivery-hub-platform",
+        linkText: "View GitHub Repo",
+        points: [
+          { bold: "1-Click Test Logins:", text: "Pre-configured test accounts for Owner & Courier roles." },
+          { bold: "Reactive Client State:", text: "Create, edit, and filter orders locally without server latency." },
+          { bold: "Zero Setup Required:", text: "Immediate hands-on evaluation directly in any browser." },
+          { bold: "Production Fidelity:", text: "Demonstrates full production workflows, validation, and UX." },
+        ],
+      },
+    ],
   },
   {
     id: 2,
