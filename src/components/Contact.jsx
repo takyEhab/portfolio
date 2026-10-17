@@ -1,9 +1,34 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Phone, MapPin, Briefcase, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Briefcase, ArrowUpRight, Copy, Check } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { personalInfo } from '../data/experience';
 
 export default function Contact() {
+  const [copiedType, setCopiedType] = useState(null);
+
+  const handleCopy = async (text, type) => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      setCopiedType(type);
+      setTimeout(() => setCopiedType(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
+    }
+  };
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -52,24 +77,48 @@ export default function Contact() {
             Feel free to reach out directly — my inbox is always open.
           </p>
 
-          {/* Primary Contact Action Buttons */}
+          {/* Primary Contact Action Buttons (Click to Copy) */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-accent-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-600/25 transition-all hover:-translate-y-0.5 hover:bg-accent-700 hover:shadow-accent-600/40"
+            <button
+              type="button"
+              onClick={() => handleCopy(personalInfo.email, 'email')}
+              aria-label="Copy email address to clipboard"
+              className="group inline-flex items-center gap-2 rounded-xl bg-accent-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-600/25 transition-all hover:-translate-y-0.5 hover:bg-accent-700 hover:shadow-accent-600/40 active:translate-y-0"
             >
-              <Mail size={18} />
-              <span>{personalInfo.email}</span>
-            </a>
+              {copiedType === 'email' ? (
+                <>
+                  <Check size={18} className="text-emerald-300" />
+                  <span>Email Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Mail size={18} />
+                  <span>{personalInfo.email}</span>
+                  <Copy size={14} className="opacity-70 transition-opacity group-hover:opacity-100" />
+                </>
+              )}
+            </button>
 
             {personalInfo.phone && (
-              <a
-                href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+              <button
+                type="button"
+                onClick={() => handleCopy(personalInfo.phone, 'phone')}
+                aria-label="Copy phone number to clipboard"
+                className="group inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-gray-50 active:translate-y-0 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
               >
-                <Phone size={18} className="text-accent-600 dark:text-accent-400" />
-                <span>{personalInfo.phone}</span>
-              </a>
+                {copiedType === 'phone' ? (
+                  <>
+                    <Check size={18} className="text-emerald-500 dark:text-emerald-400" />
+                    <span>Phone Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Phone size={18} className="text-accent-600 dark:text-accent-400" />
+                    <span>{personalInfo.phone}</span>
+                    <Copy size={14} className="text-gray-400 transition-opacity group-hover:text-gray-600 dark:group-hover:text-gray-200" />
+                  </>
+                )}
+              </button>
             )}
           </div>
 
