@@ -35,7 +35,7 @@ export const experience = [
 
 export const personalInfo = {
   name: 'Taky Allah E. Gad',
-  role: 'Full-Stack Web Developer (Node.js / React / MERN)',
+  role: 'Full-Stack Developer (Node.js / React)',
   tagline:
     'Full-stack web developer with hands-on experience across the MERN stack, building, deploying, and maintaining production web applications end-to-end — from responsive React/Vue frontends and Node.js/Express REST APIs to Linux server deployment (Nginx, SSL, DigitalOcean) and cloud hosting (Vercel).',
   email: 'tkyehab@gmail.com',
