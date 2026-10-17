@@ -17,6 +17,14 @@ export const experience = [
   },
   {
     id: 3,
+    company: 'ALX Africa',
+    role: 'Software Engineering Trainee',
+    dates: '2024 — 2025',
+    description:
+      'Completed an intensive, project-driven software engineering program covering low-level systems (C programming, memory management, UNIX systems), data structures & algorithms, Linux administration, and full-stack web development with Python, JavaScript, and relational databases.',
+  },
+  {
+    id: 4,
     company: 'Waraqa (Online Learning Platform)',
     role: 'Freelance Full-Stack Developer',
     dates: '2022',
@@ -24,7 +32,7 @@ export const experience = [
       'Took over and continued development of a full-stack online learning platform built with Vue.js, Node.js, Express.js, and MongoDB. Implemented JWT-based authentication and responsive, mobile-friendly UIs with Tailwind CSS. Independently provisioned and configured the production environment on DigitalOcean (Linux, Nginx reverse proxy, DNS, SSL) and optimized rendering and API query performance.',
   },
   {
-    id: 4,
+    id: 5,
     company: 'Freelance',
     role: 'Python Automation & Browser Tools Developer',
     dates: '2020 — 2022',
