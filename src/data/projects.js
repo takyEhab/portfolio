@@ -37,6 +37,7 @@ export const projects = [
       },
     ],
     live: "https://prince-of-the-seas-demo.vercel.app",
+    photoActionLabel: "Open Live Demo",
     dates: "2026",
   },
   {
@@ -56,6 +57,7 @@ export const projects = [
     ],
     github: "https://github.com/takyEhab/DevLink",
     live: "https://devlink-platform.vercel.app",
+    photoActionLabel: "Open Live Demo",
     dates: "2025 — 2026",
   },
   {
@@ -68,6 +70,7 @@ export const projects = [
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/takyEhab/portfolio",
     live: "https://takygad.vercel.app",
+    photoActionLabel: "Open Live Site",
     dates: "2026",
   },
   {
@@ -80,6 +83,8 @@ export const projects = [
     tech: ["Vue.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
     github: null,
     live: null,
+    pageUrl: "/waraqa",
+    photoActionLabel: "Explore Gallery & Case Study",
     dates: "2022",
   },
   {
@@ -88,10 +93,12 @@ export const projects = [
     description:
       "Custom Python web scrapers built for client data collection and monitoring use cases. Designed for reliability, scheduled runs, and structured data output.",
     image: "/python-scrapers.jpg",
+    previewImage: "/python-scrapers.jpg",
     imageGradient: "from-emerald-500 to-teal-600",
     tech: ["Python", "Web Scraping", "Automation", "Data Collection"],
     github: null,
     live: null,
+    photoActionLabel: "View Full Preview",
     dates: "2020 — 2022",
   },
   {
@@ -100,10 +107,12 @@ export const projects = [
     description:
       "JavaScript Chrome extensions developed to automate and streamline browser-based workflows for freelance clients, reducing manual repetitive tasks.",
     image: "/chrome-extensions.jpg",
+    previewImage: "/chrome-extensions.jpg",
     imageGradient: "from-orange-500 to-amber-600",
     tech: ["JavaScript", "Chrome APIs", "Automation"],
     github: null,
     live: null,
+    photoActionLabel: "View Full Preview",
     dates: "2020 — 2022",
   },
 ];
