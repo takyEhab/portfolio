@@ -45,7 +45,7 @@ export const projects = [
     title: "DevLink",
     description:
       "Developer networking platform with authentication, profile management, project sharing, and REST APIs. Features real-time messaging powered by Socket.io.",
-    image: "/devlink.jpeg",
+    image: "/devlink.png",
     imageGradient: "from-violet-500 to-purple-700",
     tech: [
       "React",
@@ -62,19 +62,6 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description:
-      "Personal developer portfolio built with React, Vite, and Tailwind CSS to showcase web development projects, technical skills, and experience.",
-    image: "/portfolio.png",
-    imageGradient: "from-cyan-500 to-blue-600",
-    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/takyEhab/portfolio",
-    live: "https://takygad.vercel.app",
-    photoActionLabel: "Open Live Site",
-    dates: "2026",
-  },
-  {
-    id: 4,
     title: "Waraqa",
     description:
       "Full-stack online learning platform built and deployed from development through production. Includes JWT authentication, responsive Vue.js interfaces, and production infrastructure on DigitalOcean.",
@@ -88,17 +75,28 @@ export const projects = [
     dates: "2022",
   },
   {
+    id: 4,
+    title: "Portfolio Website",
+    description:
+      "Personal developer portfolio built with React, Vite, and Tailwind CSS to showcase web development projects, technical skills, and experience.",
+    image: "/portfolio.png",
+    imageGradient: "from-cyan-500 to-blue-600",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/takyEhab/portfolio",
+    live: "https://takygad.vercel.app",
+    photoActionLabel: "Open Live Site",
+    dates: "2026",
+  },
+  {
     id: 5,
     title: "Python Web Scrapers",
     description:
       "Custom Python web scrapers built for client data collection and monitoring use cases. Designed for reliability, scheduled runs, and structured data output.",
-    image: "/python-scrapers.jpg",
-    previewImage: "/python-scrapers.jpg",
+    image: null,
     imageGradient: "from-emerald-500 to-teal-600",
     tech: ["Python", "Web Scraping", "Automation", "Data Collection"],
     github: null,
     live: null,
-    photoActionLabel: "View Full Preview",
     dates: "2020 — 2022",
   },
   {
@@ -106,13 +104,11 @@ export const projects = [
     title: "Chrome Extensions",
     description:
       "JavaScript Chrome extensions developed to automate and streamline browser-based workflows for freelance clients, reducing manual repetitive tasks.",
-    image: "/chrome-extensions.jpg",
-    previewImage: "/chrome-extensions.jpg",
+    image: null,
     imageGradient: "from-orange-500 to-amber-600",
     tech: ["JavaScript", "Chrome APIs", "Automation"],
     github: null,
     live: null,
-    photoActionLabel: "View Full Preview",
     dates: "2020 — 2022",
   },
 ];
