@@ -69,8 +69,49 @@ export default function Projects({ onNavigate }) {
                 variants={cardVariants}
                 className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
               >
-                {/* Project Header: Image / Gradient Placeholder */}
-                {isClickableHeader ? (
+                {/* Dual Photos (for multi-frontend platforms like DeliveryHub & Prince of the Seas) */}
+                {project.dualPhotos ? (
+                  <div className="relative grid h-48 grid-cols-2 divide-x divide-white/20 overflow-hidden bg-gray-100 dark:divide-gray-800 dark:bg-gray-800">
+                    {project.dualPhotos.map((photo) => (
+                      <a
+                        key={photo.title}
+                        href={photo.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${photo.title} demo`}
+                        className="group/subphoto relative block h-full w-full cursor-pointer overflow-hidden text-left focus:outline-none focus:ring-2 focus:ring-accent-500"
+                      >
+                        <img
+                          src={photo.image}
+                          alt={photo.title}
+                          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/subphoto:scale-105"
+                          loading="lazy"
+                        />
+
+                        {/* Subtle bottom gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+                        {/* Bottom pill tag */}
+                        <div className="pointer-events-none absolute inset-x-1.5 bottom-2 flex justify-center">
+                          <span className="truncate rounded-md bg-black/70 px-2 py-0.5 text-[10px] font-medium text-white shadow-sm backdrop-blur-md">
+                            {photo.badge}
+                          </span>
+                        </div>
+
+                        {/* Hover overlay cue */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover/subphoto:bg-black/40 group-hover/subphoto:opacity-100">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-gray-900 shadow-lg transition-transform group-hover/subphoto:scale-105 dark:bg-gray-900/95 dark:text-white">
+                            <ExternalLink size={12} className="text-accent-500" />
+                            <span className="hidden sm:inline">
+                              {photo.actionLabel}
+                            </span>
+                            <span className="sm:hidden">Open Demo</span>
+                          </span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                ) : isClickableHeader ? (
                   <button
                     type="button"
                     onClick={() => handlePhotoClick(project)}

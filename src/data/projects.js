@@ -7,12 +7,28 @@ export const projects = [
       "A full-stack delivery and courier dispatch platform built with a dual-frontend architecture:",
     bullets: [
       {
+        bold: "DeliveryHub Pro",
+        text: "Universal clean light-mode B2B operations and dispatch console with courier routing and order pipeline.",
+      },
+      {
         bold: "Prince of the Seas (أمير البحار)",
         text: "Bespoke oceanic dark-mode console with bilingual Arabic (RTL) / English (LTR) localization, 2s customer phone lookup, stage tracking, and audio chimes.",
       },
+    ],
+    dualPhotos: [
       {
-        bold: "DeliveryHub Pro",
-        text: "Universal clean light-mode B2B operations and dispatch console with courier routing and order pipeline.",
+        title: "DeliveryHub Pro",
+        badge: "DeliveryHub Pro (B2B)",
+        image: "/deliveryhub-pro.png",
+        live: "https://delivery-hub-platform.vercel.app",
+        actionLabel: "DeliveryHub Pro Demo",
+      },
+      {
+        title: "Prince of the Seas",
+        badge: "Prince of the Seas (AR/EN)",
+        image: "/prince-of-the-seas.png",
+        live: "https://prince-of-the-seas-demo.vercel.app",
+        actionLabel: "Prince of the Seas Demo",
       },
     ],
     image: "/delivery-hub-dual.png",
@@ -28,16 +44,14 @@ export const projects = [
     github: "https://github.com/takyEhab/delivery-hub-platform",
     demos: [
       {
-        label: "Prince of the Seas (AR/EN)",
-        url: "https://prince-of-the-seas-demo.vercel.app",
-      },
-      {
         label: "DeliveryHub Pro (B2B)",
         url: "https://delivery-hub-platform.vercel.app",
       },
+      {
+        label: "Prince of the Seas (AR/EN)",
+        url: "https://prince-of-the-seas-demo.vercel.app",
+      },
     ],
-    live: "https://prince-of-the-seas-demo.vercel.app",
-    photoActionLabel: "Open Live Demo",
     dates: "2026",
   },
   {
