@@ -173,11 +173,19 @@ export default function Projects({ onNavigate }) {
                   )}
                   <p
                     className={`mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400 ${
-                      !project.bullets ? 'flex-1' : ''
+                      !project.bullets && !project.note ? 'flex-1' : ''
                     }`}
                   >
                     {project.description}
                   </p>
+
+                  {/* Professional Project Note (e.g. for offline client system) */}
+                  {project.note && (
+                    <div className="mt-2.5 rounded-lg border border-amber-200/80 bg-amber-50/80 p-2.5 text-xs text-amber-900 dark:border-amber-800/50 dark:bg-amber-950/40 dark:text-amber-300">
+                      <span className="font-semibold">Deployment Note: </span>
+                      {project.note}
+                    </div>
+                  )}
 
                   {/* Bullets if present */}
                   {project.bullets && (
@@ -231,14 +239,24 @@ export default function Projects({ onNavigate }) {
                             </a>
                           ))
                         ) : project.pageUrl ? (
-                          <button
-                            type="button"
-                            onClick={() => handlePhotoClick(project)}
-                            className="inline-flex items-center gap-1.5 rounded-lg border border-accent-200/80 bg-accent-50/90 px-2.5 py-1.5 text-xs font-medium text-accent-700 shadow-sm transition-all hover:bg-accent-100 hover:text-accent-900 dark:border-accent-700/60 dark:bg-accent-950/70 dark:text-accent-300 dark:shadow-none dark:hover:border-accent-500 dark:hover:bg-accent-900/60 dark:hover:text-white"
-                          >
-                            <Images size={13} />
-                            <span>View Gallery (9 Photos) ↗</span>
-                          </button>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <button
+                              type="button"
+                              onClick={() => handlePhotoClick(project)}
+                              className="inline-flex items-center gap-1.5 rounded-lg border border-accent-200/80 bg-accent-50/90 px-2.5 py-1.5 text-xs font-medium text-accent-700 shadow-sm transition-all hover:bg-accent-100 hover:text-accent-900 dark:border-accent-700/60 dark:bg-accent-950/70 dark:text-accent-300 dark:shadow-none dark:hover:border-accent-500 dark:hover:bg-accent-900/60 dark:hover:text-white"
+                            >
+                              <Images size={13} />
+                              <span>View Gallery (9 Photos) ↗</span>
+                            </button>
+                            {project.liveStatus && (
+                              <span className="text-[11px] font-medium text-gray-500 dark:text-gray-400">
+                                Live link:{' '}
+                                <span className="font-semibold text-amber-600 dark:text-amber-400">
+                                  {project.liveStatus}
+                                </span>
+                              </span>
+                            )}
+                          </div>
                         ) : project.live ? (
                           <a
                             href={project.live}

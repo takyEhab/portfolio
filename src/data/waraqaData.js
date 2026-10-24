@@ -5,6 +5,9 @@ export const waraqaProject = {
   timeline: "2022",
   location: "Alexandria, Egypt (Client Project)",
   deployment: "DigitalOcean (Linux Ubuntu, Nginx, SSL, DNS)",
+  liveStatus: "Offline (Client Handover Concluded)",
+  statusNote:
+    "Waraqa was developed, provisioned, and deployed as a proprietary management platform for a private educational institution. Following the conclusion of the operational term and project handover, the live production VPS instance was decommissioned. The full production architecture, workflows, and 9 system interface captures are preserved below for demonstration.",
   overview:
     "Waraqa is a comprehensive school administration and online learning system developed for a private educational institution. The platform replaced fragmented manual spreadsheets with a secure, centralized web application supporting multi-role access for administrators, teachers, students, and guardians.",
   highlights: [

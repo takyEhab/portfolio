@@ -12,7 +12,7 @@ import {
   CreditCard,
   Sun,
   Moon,
-  ExternalLink,
+  Info,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { waraqaProject } from '../data/waraqaData';
@@ -158,6 +158,9 @@ export default function WaraqaPage({ onBack }) {
               <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
                 DigitalOcean Linux VPS
               </span>
+              <span className="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700 dark:bg-amber-950/60 dark:text-amber-300">
+                Live Link: Offline (Client Handover Concluded)
+              </span>
             </div>
 
             {/* Title */}
@@ -172,6 +175,17 @@ export default function WaraqaPage({ onBack }) {
             <p className="mt-4 max-w-4xl text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
               {waraqaProject.overview}
             </p>
+
+            {/* Live Deployment Status Note */}
+            {waraqaProject.statusNote && (
+              <div className="mt-4 flex max-w-4xl items-start gap-3 rounded-xl border border-amber-200/80 bg-amber-50/70 p-4 text-xs leading-relaxed text-amber-900 sm:text-sm dark:border-amber-800/40 dark:bg-amber-950/30 dark:text-amber-300">
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+                <div>
+                  <span className="font-semibold">Live Deployment Status: </span>
+                  {waraqaProject.statusNote}
+                </div>
+              </div>
+            )}
 
             {/* Tech Stack Chips */}
             <div className="mt-6 flex flex-wrap gap-2">

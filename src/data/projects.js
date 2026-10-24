@@ -77,8 +77,11 @@ export const projects = [
   {
     id: 3,
     title: "Waraqa",
+    subtitle: "Client School Management Platform",
     description:
-      "Full-stack online learning platform built and deployed from development through production. Includes JWT authentication, responsive Vue.js interfaces, and production infrastructure on DigitalOcean.",
+      "Full-stack online learning and school management platform built and deployed from development through production on DigitalOcean.",
+    note: "Private client deployment — live link is currently offline following project delivery and server decommissioning (all 9 production views documented in the gallery).",
+    liveStatus: "Offline (Client Handover)",
     image: "/waraqa.png",
     imageGradient: "from-indigo-500 to-blue-600",
     tech: ["Vue.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
